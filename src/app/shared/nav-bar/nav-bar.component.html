@@ -1,7 +1,23 @@
 <!-- Creates a layout with a left-positioned sidenav and explicit content. -->
 <mat-sidenav-container>
     <mat-sidenav mode="side" opened="true" class="example-sidenav">
-        fixed Sidenav
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <a href="#">Payment Info</a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a href="#">Business Profile</a>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+                <a href="#">Business Profile</a>
+            </mat-list-item>
+        </mat-list>
+        <!--<ul>
+            <li><a href="#">Payment Info</a></li>
+            <li><a href="#">Business Profile</a></li>
+            <li><a href="#">XYZ</a></li>
+        </ul>-->
     </mat-sidenav>
     <mat-sidenav-content>Main</mat-sidenav-content>
 </mat-sidenav-container>
+<mat-toolbar class="example-footer">Footer</mat-toolbar>
