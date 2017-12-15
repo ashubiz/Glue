@@ -34,6 +34,11 @@ export class AuthService {
    * @returns {boolean}
    */
   private hasToken() : boolean {
+    setTimeout(() => {
+      this.isLoginSubject.next(true);
+    }, 5000);
+
+
     return !!localStorage.getItem('token');
   }
 }

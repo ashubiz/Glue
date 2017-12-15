@@ -1,4 +1,5 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { HttpService } from './_services/http.service';
 import { NgModule, APP_INITIALIZER, ErrorHandler } from '@angular/core';
 import { ConfigurationService } from './_services/configuration.service';
@@ -7,6 +8,9 @@ export function configurationServiceFactory(configurationService: ConfigurationS
     return () => { return configurationService.init(); }; // => required, otherwise `this` won't work inside ConfigurationService::init
 }
 @NgModule({
+    imports: [
+        CommonModule
+    ],
     providers: [
         ConfigurationService,
         {

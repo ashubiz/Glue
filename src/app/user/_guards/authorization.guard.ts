@@ -5,6 +5,6 @@ import { Observable } from 'rxjs/Observable';
 export class AuthorizationGuard implements CanActivate {
     constructor(private router: Router) { }
     canActivate(): Observable<any> | Promise<any> | boolean {
-        return true;
+        return false;
     }
 }

@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './user/_guards/authentication.guard';
 @NgModule({
   imports: [
     RouterModule.forRoot([
+      {
+        path: '',
+        loadChildren: 'app/home/home.module#HomeModule',
+        pathMatch:'full'
+      }
+
       /* define app module routes here, e.g., to lazily load a module
          (do not place feature module routes here, use an own -routing.module.ts in the feature instead)
        */
