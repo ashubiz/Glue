@@ -14,6 +14,12 @@ import { CoreModule } from './core/core.module';
 import { CanDeactivateGuard } from './common/can-deativate-guard';
 import { AppComponent } from './app.component';
 
+/**
+ * Material Module
+ */
+
+import { MaterialModule } from './material.module';
+
 import './common/global-import';
 @NgModule({
   declarations: [
@@ -22,7 +28,8 @@ import './common/global-import';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    MaterialModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
