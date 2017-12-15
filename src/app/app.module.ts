@@ -13,8 +13,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { CanDeactivateGuard } from './common/can-deativate-guard';
 import { AppComponent } from './app.component';
-
 import './common/global-import';
+import { UserModule } from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +22,8 @@ import './common/global-import';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    UserModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
