@@ -17,8 +17,9 @@ import { AppComponent } from './app.component';
 /**
  * Material Module
  */
-
 import { MaterialModule } from './material.module';
+
+import { SharedModule } from './shared/shared.module';
 
 import './common/global-import';
 @NgModule({
@@ -29,7 +30,8 @@ import './common/global-import';
     BrowserModule,
     BrowserAnimationsModule,
     CoreModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
