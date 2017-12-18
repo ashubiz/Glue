@@ -2,7 +2,7 @@ import { environment } from '../../environments/environment';
 
 export const Config: any = environment;
 
-export let loaderState : boolean = false;
+export let loaderState: boolean = false;
 
 export function makeId(): string {
     let text = '';

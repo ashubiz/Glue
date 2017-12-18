@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  isLoggedIn : Observable<boolean>;
-  constructor( public authService : AuthService ) {
+  isLoggedIn: Observable<boolean>;
+  constructor(public authService: AuthService) {
     this.isLoggedIn = authService.isLoggedIn();
   }
 }
