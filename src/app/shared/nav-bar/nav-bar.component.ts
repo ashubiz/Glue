@@ -2,8 +2,6 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../user/_services/authentication.service';
 
-
-/** @title Responsive sidenav */
 @Component({
   moduleId: module.id,
   selector: 'app-nav-bar',
