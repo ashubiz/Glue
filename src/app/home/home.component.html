@@ -1,30 +1,30 @@
-<form [formGroup]="businessPofileFormGroup" class="example-form">
-    <mat-form-field class="example-full-width">
+<form [formGroup]="businessPofileFormGroup" class="form">
+    <mat-form-field class="full-width">
         <input matInput placeholder="Business Name" [formControl]="businessPofileFormGroup.controls['businessName']">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
         <textarea matInput placeholder="Business Description" [formControl]="businessPofileFormGroup.controls['businessDescription']"
             matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
         <input matInput placeholder="Business Phone" [formControl]="businessPofileFormGroup.controls['businessPhone']">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
         <input matInput placeholder="Website Url" [formControl]="businessPofileFormGroup.controls['websiteUrl']">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
         <input matInput placeholder="Facebook Url" [formControl]="businessPofileFormGroup.controls['facebookUrl']">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="full-width">
         <input matInput placeholder="twitter Url" [formControl]="businessPofileFormGroup.controls['twitterUrl']">
     </mat-form-field>
 
-    <button (click)="fileInput.click()" class="example-full-width">
+    <button (click)="fileInput.click()" class="full-width">
         <mat-icon>folder</mat-icon>
         <span>Upload</span>
         <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
