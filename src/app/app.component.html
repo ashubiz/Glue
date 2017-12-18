@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar *ngIf="(isLoggedIn | async)" color="primary">
+<div class="example-container" *ngIf="(isLoggedIn | async)" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar  color="primary">
       <mat-toolbar-row>
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <span>Glue</span>
@@ -17,7 +17,7 @@
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav *ngIf="(isLoggedIn | async)" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-sidenav  #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-list role="list">
           <mat-list-item role="listitem" [routerLink]="['payment_info']">
             <a href="javascript:void(0);">
@@ -38,7 +38,12 @@
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
-    <mat-toolbar *ngIf="(isLoggedIn | async)" class="example-footer">Footer</mat-toolbar>
+    <mat-toolbar  class="example-footer">Footer</mat-toolbar>
+  </div>
+
+
+  <div *ngIf="!(isLoggedIn | async)">
+    <router-outlet></router-outlet>
   </div>
 
 
