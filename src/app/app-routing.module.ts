@@ -7,7 +7,7 @@ import { AuthGuard } from './user/_guards/authentication.guard';
       {
         path: '',
         loadChildren: 'app/home/home.module#HomeModule',
-        pathMatch:'full'
+        canLoad: [AuthGuard]
       }
 
       /* define app module routes here, e.g., to lazily load a module

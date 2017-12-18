@@ -10,4 +10,8 @@ export class SigninComponent {
   constructor( public authService : AuthService ) {
     
   }
+
+  login() {
+    this.authService.login();
+  }
 }
