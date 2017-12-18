@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from '../material.module';
 
 @NgModule({
@@ -14,10 +13,8 @@ import { MaterialModule } from '../material.module';
         ReactiveFormsModule
     ],
     declarations: [
-        NavBarComponent
     ],
     exports: [
-        NavBarComponent
     ],
     providers: [],
 })

@@ -1,3 +1,50 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-nav-bar *ngIf="(isLoggedIn | async)"></app-nav-bar>
-<router-outlet></router-outlet>
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar *ngIf="(isLoggedIn | async)" color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <span>Glue</span>
+        <span class="example-spacer"></span>
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item> Change Password </button>
+          <button mat-menu-item (click)="logout()"> Logout </button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+          <mat-icon>settings</mat-icon>
+      </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav *ngIf="(isLoggedIn | async)" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-list role="list">
+          <mat-list-item role="listitem" [routerLink]="['payment_info']">
+            <a href="javascript:void(0);">
+              <mat-icon>payment</mat-icon> Payment Info</a>
+          </mat-list-item>
+          <mat-list-item role="listitem" [routerLink]="['business_profile']">
+            <a href="javascript:void(0);">
+              <mat-icon>accessibility</mat-icon> Business Profile</a>
+          </mat-list-item>
+          <mat-list-item role="listitem" [routerLink]="['promotion']">
+            <a href="javascript:void(0);">
+              <mat-icon>accessibility</mat-icon> Promotions</a>
+          </mat-list-item>
+        </mat-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+    <mat-toolbar *ngIf="(isLoggedIn | async)" class="example-footer">Footer</mat-toolbar>
+  </div>
+
+
+
+
+
+<!-- <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map> -->

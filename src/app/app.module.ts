@@ -22,6 +22,7 @@ import { MaterialModule } from './material.module';
 import { SharedModule } from './shared/shared.module';
 import './common/global-import';
 import { UserModule } from './user/user.module';
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent
@@ -34,7 +35,10 @@ import { UserModule } from './user/user.module';
     UserModule,
     MaterialModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyD0xD_UWmaBOfxQZxCMLwCxQdJquC99MLM'
+    })
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
