@@ -559,6 +559,10 @@ hr {
   width: calc(100% - 260px);
   min-height: 100%;
 }
+
+.main-panel-login {
+  width: 100%;
+}
 .main-panel > .content {
   padding: 30px 15px;
   min-height: calc(100% - 123px);
@@ -3276,6 +3280,14 @@ Copyright (c) 2015 Daniel Eden
     -o-transform: translate3d(-230px, 0, 0);
     -ms-transform: translate3d(-230px, 0, 0);
     transform: translate3d(-230px, 0, 0);
+  }
+
+  .nav-open .wrapper-login {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
   .navbar-toggle .icon-bar {
