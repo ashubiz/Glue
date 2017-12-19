@@ -1,10 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<app-nav-bar *ngIf="(isLoggedIn | async) else login"></app-nav-bar>
+<!-- <app-nav-bar *ngIf="(isLoggedIn | async) else login"></app-nav-bar> -->
 
-<ng-template #login>
-  <router-outlet></router-outlet>
-</ng-template>
+<router-outlet></router-outlet>
+
 
 
 
