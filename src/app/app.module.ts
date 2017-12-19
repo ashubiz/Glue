@@ -37,7 +37,7 @@ import { AgmCoreModule } from '@agm/core';
     SharedModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD0xD_UWmaBOfxQZxCMLwCxQdJquC99MLM'
+      apiKey: 'AIzaSyDfkqGyN4YNFJ9Cq2ec1BZEWMU1vRSUaAw'
     })
   ],
   providers: [
