@@ -7,6 +7,7 @@ import { MyDatePickerModule } from 'mydatepicker';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { TruncatePipe } from './pipes/truncatepipe';
 import { BsModalModule } from 'ng2-bs3-modal';
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { BsModalModule } from 'ng2-bs3-modal';
         DatePickerComponent,
         SidebarComponent,
         NavbarComponent,
-        FooterComponent
+        FooterComponent,
+        TruncatePipe
     ],
     exports: [
         CommonModule,
@@ -31,7 +33,8 @@ import { BsModalModule } from 'ng2-bs3-modal';
         SidebarComponent,
         NavbarComponent,
         FooterComponent,
-        BsModalModule
+        BsModalModule,
+        TruncatePipe
     ],
     providers: [],
 })
