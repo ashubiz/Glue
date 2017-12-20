@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BusinessProfileComponent } from './business-profile.component';
+
+import { SharedModule } from '../shared/shared.module';
 import { BusinessProfileRoutingModule } from './business-profile-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { BusinessProfileComponent } from './business-profile.component';
+import { EditBusinessProfileComponent } from './edit-business-profile/edit-business-profile.component';
 @NgModule({
     imports: [
-        CommonModule,
-        RouterModule,
-        FormsModule,
-        ReactiveFormsModule,
-        BusinessProfileRoutingModule
+        SharedModule,
+        BusinessProfileRoutingModule,
+        ReactiveFormsModule
     ],
     declarations: [
-        BusinessProfileComponent
+        BusinessProfileComponent,
+        EditBusinessProfileComponent
     ],
     exports: [
     ],
