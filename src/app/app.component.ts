@@ -14,17 +14,8 @@ export class AppComponent implements OnDestroy {
   lat: number = 51.678418;
   lng: number = 7.809007;
 
-  myDate: FormControl;
-
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.isLoggedIn = authService.isLoggedIn();
-    this.myDate = this.fb.control({
-      date: ''
-    });
-
-    this.myDate.valueChanges.subscribe((element) => {
-      console.log(element);
-    });
 
   }
 

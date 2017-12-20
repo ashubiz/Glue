@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import './common/global-import';
 import { UserModule } from './user/user.module';
 import { AgmCoreModule } from '@agm/core';
+import { BusinessProfileModule } from './business-profile/business-profile.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -31,6 +32,7 @@ import { AgmCoreModule } from '@agm/core';
     UserModule,
     SharedModule,
     AppRoutingModule,
+    BusinessProfileModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDfkqGyN4YNFJ9Cq2ec1BZEWMU1vRSUaAw'
     })

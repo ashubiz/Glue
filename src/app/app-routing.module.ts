@@ -8,6 +8,10 @@ import { AuthGuard } from './user/_guards/authentication.guard';
         path: '',
         loadChildren: 'app/home/home.module#HomeModule',
         canLoad: [AuthGuard]
+      },
+      {
+        path: 'business_profile',
+        loadChildren: 'app/business-profile/business-profile.module#BusinessProfileModule'
       }
 
       /* define app module routes here, e.g., to lazily load a module
