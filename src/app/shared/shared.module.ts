@@ -16,7 +16,9 @@ import { NavbarComponent } from './navbar/navbar.component';
         ReactiveFormsModule
     ],
     declarations: [
-        DatePickerComponent
+        DatePickerComponent,
+        SidebarComponent,
+        NavbarComponent
     ],
     exports: [
         DatePickerComponent,
