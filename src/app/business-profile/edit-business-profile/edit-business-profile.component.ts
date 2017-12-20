@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { BusinessProfile } from '../BusinessProfile';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
@@ -10,7 +10,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 export class EditBusinessProfileComponent implements OnInit {
   businessPofileFormGroup: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private elRef: ElementRef) { }
 
   ngOnInit() {
     const businessProfile = new BusinessProfile({});
@@ -29,6 +29,21 @@ export class EditBusinessProfileComponent implements OnInit {
     businessProfile['uploadFile'] = element['uploadFile'];
     businessProfile['businessAddress'] = element['businessAddress'];
     return businessProfile;
+  }
+
+  onSelectDocument(event) {
+    const fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+       const reader = new FileReader();
+        const image = this.elRef.nativeElement.querySelector('.testImage');
+
+        reader.onload = (e) => {
+            const src = e.target.result;
+            image.src = src;
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }
