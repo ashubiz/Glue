@@ -3,8 +3,9 @@ import { IMyDpOptions } from 'mydatepicker';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'app-date-picker',
-    templateUrl: './date-picker.component.html'
+    moduleId: module.id,
+    selector: 'app-date-picker, [app-date-picker]',
+    template: `<my-date-picker name="date" [options]="myDatePickerOptions" [formControl]="date"></my-date-picker>`
 })
 export class DatePickerComponent {
 

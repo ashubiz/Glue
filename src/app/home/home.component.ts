@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
 
   businessPofileFormGroup: FormGroup;
 
+  PromotionsFormGroup: FormGroup;
+
   constructor(private fb: FormBuilder) {
 
   }
@@ -22,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.businessPofileFormGroup = this.fb.group(this.generateBusinessProfileFormGroup(businessProfile));
 
     const promotions = new Promotions({});
-    this.businessPofileFormGroup = this.fb.group(this.generateBusinessProfileFormGroup(promotions));
+    this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotions));
   }
 
   generateBusinessProfileFormGroup(element: any) {
