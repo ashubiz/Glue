@@ -37,7 +37,7 @@ export class EditBusinessProfileComponent implements OnInit {
        const reader = new FileReader();
         const image = this.elRef.nativeElement.querySelector('.testImage');
 
-        reader.onload = (e) => {
+        reader.onload = (e: any) => {
             const src = e.target.result;
             image.src = src;
         };

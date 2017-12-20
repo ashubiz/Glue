@@ -11,7 +11,18 @@ import { AuthGuard } from './user/_guards/authentication.guard';
       },
       {
         path: 'business_profile',
-        loadChildren: 'app/business-profile/business-profile.module#BusinessProfileModule'
+        loadChildren: 'app/business-profile/business-profile.module#BusinessProfileModule',
+        canLoad: [AuthGuard]
+      },
+      {
+        path: 'promotions',
+        loadChildren: 'app/promotions/promotions.module#PromotionsModule',
+        canLoad: [AuthGuard]
+      },
+      {
+        path: 'dashboard',
+        loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
+        canLoad: [AuthGuard]
       }
 
       /* define app module routes here, e.g., to lazily load a module

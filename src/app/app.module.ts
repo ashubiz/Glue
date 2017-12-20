@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { SharedModule } from './shared/shared.module';
+import { DynamicModule } from './dynamic/dynamic.module';
 import './common/global-import';
 import { UserModule } from './user/user.module';
 import { AgmCoreModule } from '@agm/core';
@@ -35,7 +36,8 @@ import { BusinessProfileModule } from './business-profile/business-profile.modul
     BusinessProfileModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDfkqGyN4YNFJ9Cq2ec1BZEWMU1vRSUaAw'
-    })
+    }),
+    DynamicModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
