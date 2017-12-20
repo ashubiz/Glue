@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyDatePickerModule } from 'mydatepicker';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -18,12 +18,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     declarations: [
         DatePickerComponent,
         SidebarComponent,
-        NavbarComponent
+        NavbarComponent,
+        FooterComponent
     ],
     exports: [
         DatePickerComponent,
         SidebarComponent,
-        NavbarComponent
+        NavbarComponent,
+        FooterComponent
     ],
     providers: [],
 })
