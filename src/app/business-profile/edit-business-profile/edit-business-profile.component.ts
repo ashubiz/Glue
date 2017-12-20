@@ -34,15 +34,15 @@ export class EditBusinessProfileComponent implements OnInit {
   onSelectDocument(event) {
     const fileList: FileList = event.target.files;
     if (fileList.length > 0) {
-       const reader = new FileReader();
-        const image = this.elRef.nativeElement.querySelector('.testImage');
+      const reader = new FileReader();
+      const image = this.elRef.nativeElement.querySelector('.testImage');
 
-        reader.onload = (e: any) => {
-            const src = e.target.result;
-            image.src = src;
-        };
+      reader.onload = (e: any) => {
+        const src = e.target.result;
+        image.src = src;
+      };
 
-        reader.readAsDataURL(event.target.files[0]);
+      reader.readAsDataURL(event.target.files[0]);
     }
   }
 
