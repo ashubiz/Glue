@@ -563,7 +563,7 @@ hr {
 .main-panel-login {
   width: 100%;
 }
-.main-panel > .content {
+.main-panel .content {
   padding: 30px 15px;
   min-height: calc(100% - 123px);
 }
@@ -2325,13 +2325,17 @@ Copyright (c) 2015 Daniel Eden
   height: 100px;
   border-radius: 50%;
   position: relative;
-  margin-bottom: 15px;
+  cursor: pointer;
 }
 .card-user .avatar.border-white {
   border: 5px solid #FFFFFF;
 }
 .card-user .avatar.border-gray {
-  border: 5px solid #ccc5b9;
+  border: 5px solid #ece9e0;
+  background: #fff;
+}
+.card-user .avatar.border-gray:hover {
+  opacity: 0.8;
 }
 .card-user .title {
   font-weight: 600;
@@ -2346,6 +2350,27 @@ Copyright (c) 2015 Daniel Eden
 .card-user.card-plain .avatar {
   height: 190px;
   width: 190px;
+}
+
+.business-view .content .image {
+  height: 210px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.business-heading {
+  margin-top: -15px;
+  color: #66615b;
+  font-size: 16px;
+  text-align: center;
+}
+
+.marginBT10 {
+  margin-bottom: 10px;
+}
+
+.marginRT15 {
+  margin-right: 15px;
 }
 
 .card-map .map {
