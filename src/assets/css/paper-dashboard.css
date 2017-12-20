@@ -1752,6 +1752,26 @@ textarea.form-control {
   background-color: transparent;
 }
 
+/*
+  login page styling
+*/
+
+.login-page > .content,
+.lock-page > .content {
+  padding-top: 20vh;
+}
+
+.lock-page .card-lock {
+  text-align: center;
+  width: 300px;
+  margin: 30px auto 0;
+  padding: 30px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  display: block;
+}
+
 .footer {
   background-attachment: fixed;
   position: relative;
@@ -2083,6 +2103,71 @@ Copyright (c) 2015 Daniel Eden
   position: relative;
   z-index: 1;
 }
+
+.card .card-title,
+.card .stats,
+.card .category,
+.card .description,
+.card .social-line,
+.card .actions,
+.card .card-content,
+.card .card-footer,
+.card small,
+.card a {
+  position: relative;
+}
+
+.card .card-header {
+  padding: 20px 15px 0px;
+  position: relative;
+  border-radius: 3px 3px 0 0;
+  z-index: 3;
+}
+
+.card .card-title {
+  margin: 0;
+  color: #252422;
+  font-weight: 300;
+}
+
+.card .card-content {
+  padding: 15px 15px 10px 15px;
+}
+.card .card-content .card-title {
+  margin: 10px 0 20px 0;
+}
+.card .card-content .big-title {
+  text-transform: uppercase;
+  text-align: center;
+}
+.card .card-content .category ~ .card-title {
+  margin-top: 10px;
+}
+.card .card-content .description ~ .card-title {
+  margin-top: -10px;
+}
+
+.card .card-footer {
+  padding: 0 15px 15px;
+}
+.card .card-footer .social-line .btn:first-child {
+  border-radius: 0 0 0 6px;
+}
+.card .card-footer .social-line .btn:last-child {
+  border-radius: 0 0 6px 0;
+}
+.card .card-footer hr {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.card .card-footer > .form-group {
+  margin-bottom: 0;
+}
+.card .card-footer .footer-title {
+  padding-top: 5px;
+  display: inline-block;
+}
+
 .card .image {
   width: 100%;
   overflow: hidden;

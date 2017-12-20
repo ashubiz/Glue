@@ -1,16 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div class="wrapper">
-  <div *ngIf="(isLoggedIn | async)" class="sidebar" data-background-color="white" data-active-color="danger">
-      <sidebar-cmp></sidebar-cmp>
-  </div>
-  <div class="main-panel" [ngClass]="{'main-panel-login':!(isLoggedIn | async)}" >
-      <navbar-cmp *ngIf="(isLoggedIn | async)"></navbar-cmp>
-      <div class="content">
-          <router-outlet></router-outlet>
-      </div>
-      <!-- <footer-cmp *ngIf="(isLoggedIn | async)"></footer-cmp> -->
-  </div>
+    <div *ngIf="(isLoggedIn | async)" class="sidebar" data-background-color="white" data-active-color="danger">
+        <app-sidebar-cmp></app-sidebar-cmp>
+    </div>
+    <div class="main-panel" [ngClass]="{'main-panel-login':!(isLoggedIn | async)}">
+        <navbar-cmp *ngIf="(isLoggedIn | async)"></navbar-cmp>
+        <div [ngClass]="{'full-page login-page': !(isLoggedIn | async)}" data-color="">
+            <div class="content">
+                <router-outlet></router-outlet>
+             </div>
+        </div> 
+        <!-- <footer-cmp *ngIf="(isLoggedIn | async)"></footer-cmp> -->
+    </div>
 </div>
 
 <!-- <agm-map [latitude]="lat" [longitude]="lng">
