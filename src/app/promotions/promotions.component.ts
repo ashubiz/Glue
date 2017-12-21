@@ -20,36 +20,42 @@ export class PromotionsComponent implements OnInit {
             headerRow: ['ID', 'Name', 'Country', 'City', 'Salary'],
             dataRows: [
                 new Promotions({
+                    id: '1',
                     name: 'Dakota Rice',
                     description: 'Niger',
                     startDate: '21-12-2017',
                     endDate: '22-12-2017'
                 }),
                 new Promotions({
+                    id: '2',
                     name: 'Minerva Hooper',
                     description: 'Curaçao',
                     startDate: '11-11-2017',
                     endDate: '31-12-2017'
                 }),
                 new Promotions({
+                    id: '3',
                     name: 'Sage Rodriguez',
                     description: 'Netherlands',
                     startDate: '05-06-2017',
                     endDate: '15-01-2017'
                 }),
                 new Promotions({
+                    id: '4',
                     name: 'Philip Chaney',
                     description: 'Korea, South',
                     startDate: '19-04-2015',
                     endDate: '14-05-2016'
                 }),
                 new Promotions({
+                    id: '5',
                     name: 'Doris Greene',
                     description: 'Malawi',
                     startDate: '26-05-2004',
                     endDate: '28-02-2019'
                 }),
                 new Promotions({
+                    id: '6',
                     name: 'Mason Porter',
                     description: 'Chile',
                     startDate: '18-08-2015',
@@ -61,8 +67,8 @@ export class PromotionsComponent implements OnInit {
 
     ngOnInit() { }
 
-    showPromotion(promotion: Promotions) {
-        this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion));
+    showPromotion(promotion?: Promotions) {
+        this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion ? promotion : new Promotions({})));
         this.dynamicService.show({
             component: PromotionComponent,
             input: {

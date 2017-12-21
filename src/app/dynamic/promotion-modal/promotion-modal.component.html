@@ -23,13 +23,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Star tDate</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['startDate']" placeholder="Start Date">
+                            <app-date-picker [date]="PromotionsFormGroup.controls['startDate']" ></app-date-picker>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>End Date</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['endDate']" placeholder="End Date">
+                            <app-date-picker [date]="PromotionsFormGroup.controls['endDate']" ></app-date-picker>
                         </div>
                     </div>
                 </div>

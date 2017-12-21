@@ -6,7 +6,7 @@ export class Promotions {
     startDate: string;
     endDate: string;
     constructor(obj: any) {
-        this.id = makeId();
+        this.id = obj.id ? obj.id : '';
         this.name = obj.name ? obj.name : '';
         this.description = obj.description ? obj.description : '';
         this.startDate = obj.startDate ? obj.startDate : '';
