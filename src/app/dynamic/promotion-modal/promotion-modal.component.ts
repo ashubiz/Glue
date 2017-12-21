@@ -9,7 +9,7 @@ export class PromotionComponent implements OnInit, OnDestroy, AfterViewInit {
 
     inputs: any;
     destroy: any;
-    PromotionsFormGroup: FormGroup;
+    promotionsFormGroup: FormGroup;
     @ViewChild('modal') modal: BsModalComponent;
     constructor(
         private injector: Injector
@@ -18,7 +18,7 @@ export class PromotionComponent implements OnInit, OnDestroy, AfterViewInit {
     ngOnInit() {
         this.inputs = this.injector.get('data');
         this.destroy = this.injector.get('destroy');
-        this.PromotionsFormGroup = this.inputs.promotion;
+        this.promotionsFormGroup = this.inputs.promotion;
     }
     ngAfterViewInit() {
         this.modal.open();

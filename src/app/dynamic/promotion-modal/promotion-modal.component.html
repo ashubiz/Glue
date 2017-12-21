@@ -1,21 +1,21 @@
 <bs-modal #modal>
     <bs-modal-header>
-        <h4 class="modal-title">I'm a modal!</h4>
+        <h4 class="modal-title">{{promotionsFormGroup.controls['id'].value ? 'Edit Promotion': 'New Promotion'}}</h4>
     </bs-modal-header>
     <bs-modal-body>
         <div class="content">
-            <form [formGroup]="PromotionsFormGroup">
+            <form [formGroup]="promotionsFormGroup">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['name']" placeholder="Name">
+                            <input type="text" class="form-control border-input" [formControl]="promotionsFormGroup.controls['name']" placeholder="Name">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Description</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['description']" placeholder="Description">
+                            <input type="text" class="form-control border-input" [formControl]="promotionsFormGroup.controls['description']" placeholder="Description">
                         </div>
                     </div>
                 </div>
@@ -23,13 +23,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Star tDate</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['startDate']" placeholder="Start Date">
+                            <app-date-picker [date]="promotionsFormGroup.controls['startDate']" ></app-date-picker>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>End Date</label>
-                            <input type="text" class="form-control border-input" [formControl]="PromotionsFormGroup.controls['endDate']" placeholder="End Date">
+                            <app-date-picker [date]="promotionsFormGroup.controls['endDate']" ></app-date-picker>
                         </div>
                     </div>
                 </div>
