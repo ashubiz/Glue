@@ -9,6 +9,9 @@ export class BusinessProfile {
     twitterUrl: string;
     uploadFile: File;
     businessAddress: string;
+    city: string;
+    country: string;
+    postalCode: number;
     constructor(obj: any) {
         this.id = makeId();
         this.businessName = obj.businessName ? obj.businessName : '';
@@ -19,5 +22,8 @@ export class BusinessProfile {
         this.twitterUrl = obj.twitterUrl ? obj.twitterUrl : '';
         this.uploadFile = obj.uploadFile ? obj.uploadFile : null;
         this.businessAddress = obj.businessAddress ? obj.businessAddress : '';
+        this.city = obj.city ? obj.city : '';
+        this.country = obj.country ? obj.country : '';
+        this.postalCode = obj.postalCode ? obj.postalCode : 0;
     }
 }

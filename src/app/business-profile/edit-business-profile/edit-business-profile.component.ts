@@ -28,6 +28,9 @@ export class EditBusinessProfileComponent implements OnInit {
     businessProfile['twitterUrl'] = element['twitterUrl'];
     businessProfile['uploadFile'] = element['uploadFile'];
     businessProfile['businessAddress'] = element['businessAddress'];
+    businessProfile['city'] = element['city'];
+    businessProfile['country'] = element['country'];
+    businessProfile['postalCode'] = element['postalCode'];
     return businessProfile;
   }
 

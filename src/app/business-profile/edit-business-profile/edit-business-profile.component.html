@@ -69,19 +69,19 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label>City</label>
-                  <input type="text" class="form-control border-input" placeholder="City" value="Melbourne">
+                  <input type="text" class="form-control border-input" [formControl]="businessPofileFormGroup.controls['city']" placeholder="City">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Country</label>
-                  <input type="text" class="form-control border-input" placeholder="Country" value="Australia">
+                  <input type="text" class="form-control border-input" [formControl]="businessPofileFormGroup.controls['country']" placeholder="Country">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label>Postal Code</label>
-                  <input type="number" class="form-control border-input" placeholder="ZIP Code">
+                  <input type="number" class="form-control border-input" [formControl]="businessPofileFormGroup.controls['postalCode']" placeholder="ZIP Code">
                 </div>
               </div>
             </div>
