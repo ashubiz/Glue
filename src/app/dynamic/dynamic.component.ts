@@ -29,6 +29,16 @@ export class DynamicComponent implements OnInit, OnDestroy {
             return;
         }
 
+
+
+
+        // let componentFactory = this.resolver.resolveComponentFactory(data.component);
+        // let viewContainerRef = this.componentHost.viewContainerRef;
+        // let componentRef = viewContainerRef.createComponent(componentFactory);
+        // (componentRef.instance).data = data.inputs;
+
+
+
         // Inputs need to be in the following format to be resolved properly
         const inputProviders = Object.keys(data.inputs).map((inputName) => {
             return {
@@ -54,13 +64,11 @@ export class DynamicComponent implements OnInit, OnDestroy {
         if (this.currentComponent) {
             this.currentComponent.destroy();
         }
-
         this.currentComponent = component;
     }
 
     constructor(private resolver: ComponentFactoryResolver,
         private dynamicService: DynamicService) {
-
     }
 
 

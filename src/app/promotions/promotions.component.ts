@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DynamicService } from '../dynamic/dynamic.service';
-import { PromotionComponent } from '../promotions/promotion-modal/promotion-modal.component';
+import { PromotionComponent } from '../dynamic/promotion-modal/promotion-modal.component';
 declare interface TableData {
     headerRow: string[];
     dataRows: string[][];
