@@ -21,6 +21,7 @@ import './common/global-import';
 import { UserModule } from './user/user.module';
 import { AgmCoreModule } from '@agm/core';
 import { BusinessProfileModule } from './business-profile/business-profile.module';
+import { PaymentInfoModule } from './payment-info/payment-info.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -34,6 +35,7 @@ import { BusinessProfileModule } from './business-profile/business-profile.modul
     SharedModule,
     AppRoutingModule,
     BusinessProfileModule,
+    PaymentInfoModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDfkqGyN4YNFJ9Cq2ec1BZEWMU1vRSUaAw'
     }),

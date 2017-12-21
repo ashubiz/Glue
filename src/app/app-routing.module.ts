@@ -23,6 +23,11 @@ import { AuthGuard } from './user/_guards/authentication.guard';
         path: 'dashboard',
         loadChildren: 'app/dashboard/dashboard.module#DashboardModule',
         canLoad: [AuthGuard]
+      },
+      {
+        path: 'paymentInfo',
+        loadChildren: 'app/payment-info/payment-info.module#PaymentInfoModule',
+        canLoad: [AuthGuard]
       }
 
       /* define app module routes here, e.g., to lazily load a module

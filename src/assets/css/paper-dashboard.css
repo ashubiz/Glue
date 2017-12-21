@@ -802,7 +802,7 @@ hr {
 }
 .navbar .navbar-nav > li > a.btn-info:hover, .navbar .navbar-nav > li > a.btn-info:focus, .navbar .navbar-nav > li > a.btn-info:active, .navbar .navbar-nav > li > a.btn-info.active, .open > .navbar .navbar-nav > li > a.btn-info.dropdown-toggle, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .btn-info.dropdown-toggle {
   background-color: #68B3C8;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
   border-color: #68B3C8;
 }
 .navbar .navbar-nav > li > a.btn-info:hover .caret, .navbar .navbar-nav > li > a.btn-info:focus .caret, .navbar .navbar-nav > li > a.btn-info:active .caret, .navbar .navbar-nav > li > a.btn-info.active .caret, .open > .navbar .navbar-nav > li > a.btn-info.dropdown-toggle .caret, .btn-info:hover .caret, .btn-info:focus .caret, .btn-info:active .caret, .btn-info.active .caret, .open > .btn-info.dropdown-toggle .caret {
@@ -1811,6 +1811,38 @@ textarea.form-control {
   color: #DD0330;
 }
 
+.icon-property, .btn-rotate i, .btn-rotate90 i, .btn-magnify i, .btn-move-left i, .btn-move-right i {
+  -webkit-transition: all 300ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  -moz-transition: all 300ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  -o-transition: all 300ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  -ms-transition: all 300ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  transition: all 300ms cubic-bezier(0.34, 1.61, 0.7, 1);
+  position: relative;
+  display: inline-block;
+}
+
+.btn-rotate:hover i, .btn-rotate:focus i {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(53deg);
+  -ms-transform: rotate(53deg);
+  transform: rotate(53deg);
+}
+
+.btn-rotate90:hover i, .btn-rotate90:focus i {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.btn-magnify:hover i, .btn-magnify:focus i {
+  -webkit-transform: scale(1.22);
+  -moz-transform: scale(1.22);
+  -o-transform: scale(1.22);
+  -ms-transform: scale(1.22);
+  transform: scale(1.22);
+}
+
 /*
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
@@ -2351,7 +2383,40 @@ Copyright (c) 2015 Daniel Eden
   height: 190px;
   width: 190px;
 }
-
+.card[data-background-color="blue"] {
+  background: #b8d8d8;
+}
+.card[data-background-color="green"] {
+  background: #d5e5a3;
+}
+.card[data-background-color="orange"] {
+  background: #ff8f5e;
+}
+.card[data-background-color="blue"] .card-title,
+.card[data-background-color="green"] .card-title,
+.card[data-background-color="orange"] .card-title {
+  color: #fff;
+}
+.card.card-circle-chart .card-title {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.card[data-background-color="blue"] .description {
+  color: #506568;
+  font-size: 22px;
+}
+.card[data-background-color="green"] .description {
+  color: #60773d;
+  font-size: 22px;
+}
+.card[data-background-color="orange"] .description {
+  color: #772510;
+  font-size: 22px;
+}
+.btn.btn-icon, .navbar .navbar-nav > li > a.btn.btn-icon {
+  border-radius: 25px;
+  padding: 7px 11px;
+}
 .business-view .content .image {
   height: 210px;
   background-size: cover;
