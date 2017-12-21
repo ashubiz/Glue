@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { BusinessProfile } from './BusinessProfile';
 import { Promotions } from './Promotions';
 @Component({
   moduleId: module.id,
@@ -20,25 +19,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    const businessProfile = new BusinessProfile({});
-    this.businessPofileFormGroup = this.fb.group(this.generateBusinessProfileFormGroup(businessProfile));
-
     const promotions = new Promotions({});
     this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotions));
-  }
-
-  generateBusinessProfileFormGroup(element: any) {
-    const businessProfile: any = {};
-    businessProfile['id'] = element['id'];
-    businessProfile['businessName'] = element['businessName'];
-    businessProfile['businessDescription'] = element['businessDescription'];
-    businessProfile['businessPhone'] = element['businessPhone'];
-    businessProfile['websiteUrl'] = element['websiteUrl'];
-    businessProfile['facebookUrl'] = element['facebookUrl'];
-    businessProfile['twitterUrl'] = element['twitterUrl'];
-    businessProfile['uploadFile'] = element['uploadFile'];
-    businessProfile['businessAddress'] = element['businessAddress'];
-    return businessProfile;
   }
 
     generatePromotionsFormGroup(element: any) {

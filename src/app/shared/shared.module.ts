@@ -34,7 +34,8 @@ import { BsModalModule } from 'ng2-bs3-modal';
         NavbarComponent,
         FooterComponent,
         BsModalModule,
-        TruncatePipe
+        TruncatePipe,
+        ReactiveFormsModule
     ],
     providers: [],
 })
