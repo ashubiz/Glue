@@ -16,21 +16,9 @@ export class DatePickerComponent implements OnInit {
         showTodayBtn: false
     };
 
-    ngOnInit() {
-        if (this.date.value) {
-            const dataSplit = this.date.value.split('-');
-            const date = new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0]);
-            this.date.patchValue({
-                date: {
-                    year: date.getFullYear(),
-                    month: date.getMonth() + 1,
-                    day: date.getDate()
-                }
-            });
-        }
-    }
+    ngOnInit() {}
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor() { }
 
     clearDate(): void {
         this.date.setValue(null);

@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { TruncatePipe } from './pipes/truncatepipe';
+import { DateFormatorPipe } from './pipes/date-formatPipe';
 import { BsModalModule } from 'ng2-bs3-modal';
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { BsModalModule } from 'ng2-bs3-modal';
         SidebarComponent,
         NavbarComponent,
         FooterComponent,
-        TruncatePipe
+        TruncatePipe,
+        DateFormatorPipe
     ],
     exports: [
         CommonModule,
@@ -35,7 +37,8 @@ import { BsModalModule } from 'ng2-bs3-modal';
         FooterComponent,
         BsModalModule,
         TruncatePipe,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        DateFormatorPipe
     ],
     providers: [],
 })
