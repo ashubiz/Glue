@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 /**
  * Super Imports
  */
@@ -37,7 +37,8 @@ import { BusinessProfileModule } from './business-profile/business-profile.modul
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDfkqGyN4YNFJ9Cq2ec1BZEWMU1vRSUaAw'
     }),
-    DynamicModule
+    DynamicModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

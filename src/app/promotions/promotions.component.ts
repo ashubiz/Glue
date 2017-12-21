@@ -3,6 +3,7 @@ import { DynamicService } from '../dynamic/dynamic.service';
 import { PromotionComponent } from '../dynamic/promotion-modal/promotion-modal.component';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Promotions } from './Promotions';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 declare interface TableData {
     headerRow: string[];
     dataRows: Array<Promotions>;
@@ -15,7 +16,7 @@ declare interface TableData {
 export class PromotionsComponent implements OnInit {
     public tableData1: TableData;
     PromotionsFormGroup: FormGroup;
-    constructor(private dynamicService: DynamicService, private fb: FormBuilder) {
+    constructor(private dynamicService: DynamicService, private fb: FormBuilder, private http: HttpClient) {
         this.tableData1 = {
             headerRow: ['ID', 'Name', 'Country', 'City', 'Salary'],
             dataRows: [
@@ -61,16 +62,20 @@ export class PromotionsComponent implements OnInit {
 
     ngOnInit() { }
 
-    showPromotion(promotion: Promotions) {
-        this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion));
-        this.dynamicService.show({
-            component: PromotionComponent,
-            input: {
-                data: {
-                    promotion: this.PromotionsFormGroup
-                }
-            }
-        });
+    showPromotion(promotion?: Promotions) {
+
+        this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            console.log(res);
+        })
+        // this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion));
+        // this.dynamicService.show({
+        //     component: PromotionComponent,
+        //     input: {
+        //         data: {
+        //             promotion: this.PromotionsFormGroup
+        //         }
+        //     }
+        // });
     }
 
     generatePromotionsFormGroup(element: any) {
