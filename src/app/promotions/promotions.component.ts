@@ -51,7 +51,7 @@ export class PromotionsComponent implements OnInit {
                     id: '5',
                     name: 'Doris Greene',
                     description: 'Malawi',
-                    startDate: '26-05-2004',
+                    startDate: '',
                     endDate: '28-02-2019'
                 }),
                 new Promotions({
@@ -59,7 +59,7 @@ export class PromotionsComponent implements OnInit {
                     name: 'Mason Porter',
                     description: 'Chile',
                     startDate: '18-08-2015',
-                    endDate: '24-62-2020'
+                    endDate: ''
                 }),
             ]
         };
