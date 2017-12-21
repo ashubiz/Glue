@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
     selector: 'app-date-picker, [app-date-picker]',
     template: `<my-date-picker name="date" [options]="myDatePickerOptions" [formControl]="date"></my-date-picker>`
 })
-export class DatePickerComponent {
+export class DatePickerComponent implements OnInit {
 
     @Input() date: FormControl;
 
@@ -15,6 +15,23 @@ export class DatePickerComponent {
         dateFormat: 'dd-mm-yyyy',
         showTodayBtn: false
     };
+
+    ngOnInit() {
+        let date: any;
+        if (!this.date.value) {
+            date = new Date();
+        } else {
+            const dataSplit = this.date.value.split('-');
+           date = new Date(dataSplit[2], dataSplit[1] - 1, dataSplit[0]);
+        }
+        this.date.patchValue({
+            date: {
+                year: date.getFullYear(),
+                month: date.getMonth() + 1,
+                day: date.getDate()
+            }
+        });
+    }
 
     constructor(private formBuilder: FormBuilder) { }
 
