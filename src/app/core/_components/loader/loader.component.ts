@@ -5,8 +5,10 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
     moduleId: module.id,
     selector: 'angular-loader',
-    templateUrl: 'loader.component.html',
-    styleUrls: ['loader.component.css']
+    template: `<div *ngIf="show" class="loader-container">
+                    <div class="loader"></div>
+              </div>`,
+    // styleUrls: ['loader.component.css']
 })
 export class LoaderComponent implements OnInit, OnDestroy {
     isLoading: Observable<boolean>;
@@ -33,7 +35,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
             }
         });
     }
-    
+
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }

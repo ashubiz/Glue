@@ -69,9 +69,9 @@ export class PromotionsComponent implements OnInit {
     ngOnInit() { }
 
     showPromotion(promotion?: Promotions) {
-        // this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
-        //     console.log(res);
-        // })
+        this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            console.log(res);
+        });
 
         this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion ? promotion : new Promotions({})));
         this.dynamicService.show({

@@ -10,9 +10,12 @@ import {
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import { catchError, finalize, map } from 'rxjs/operators';
+import { LoaderService } from '../_components/loader/loader.service';
+
+@Injectable()
 export class HttpService implements HttpInterceptor {
   requestCalls: number;
-  constructor() {
+  constructor(private loaderService: LoaderService) {
     this.requestCalls = 0;
   }
 
@@ -40,12 +43,10 @@ export class HttpService implements HttpInterceptor {
     );
   }
   private showLoader(): void {
-    // this.loaderService.show();
-    console.log('show loader');
+    this.loaderService.showLoader();
   }
 
   private hideLoader(): void {
-    // this.loaderService.hide();
-    console.log('hide loader');
+    this.loaderService.hideLoader();
   }
 }

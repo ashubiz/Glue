@@ -5,6 +5,8 @@ import { NgModule, APP_INITIALIZER, ErrorHandler, ApplicationRef } from '@angula
 import { ConfigurationService } from './_services/configuration.service';
 import { MyErrorHandler } from './_services/exception-handling.service';
 import { MobileService } from './_services/mobile.service';
+import { LoaderService } from './_components/loader/loader.service';
+import { LoaderComponent } from './_components/loader/loader.component';
 export function configurationServiceFactory(configurationService: ConfigurationService): Function {
     return () => { return configurationService.init(); }; // => required, otherwise `this` won't work inside ConfigurationService::init
 }
@@ -12,8 +14,12 @@ export function configurationServiceFactory(configurationService: ConfigurationS
     imports: [
         CommonModule
     ],
+    declarations: [
+        LoaderComponent
+    ],
     providers: [
         ConfigurationService,
+        LoaderService,
         {
             provide: APP_INITIALIZER,
             useFactory: configurationServiceFactory,
@@ -25,9 +31,10 @@ export function configurationServiceFactory(configurationService: ConfigurationS
             useClass: HttpService,
             multi: true
         },
-         MyErrorHandler,
-        { provide: ErrorHandler, useClass: MyErrorHandler},
+        MyErrorHandler,
+        { provide: ErrorHandler, useClass: MyErrorHandler },
         MobileService
-    ]
+    ],
+    exports: [LoaderComponent]
 })
 export class CoreModule { }

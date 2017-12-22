@@ -6,21 +6,21 @@ import { loaderState } from '../../../common/utility';
 export class LoaderService {
     loaderSubject = new BehaviorSubject<boolean>(this.loaderState());
     loader: boolean;
-    constructor(loaderState: boolean) {
-        this.loader = loaderState;
+    constructor() {
+        this.loader = false;
     }
 
-    isLoading() : Observable<boolean> {
+    isLoading(): Observable<boolean> {
         return this.loaderSubject.asObservable();
     }
 
     showLoader() {
-        this.loader =  true;
+        this.loader = true;
         this.loaderSubject.next(true);
     }
 
     hideLoader() {
-        this.loader =  false;
+        this.loader = false;
         this.loaderSubject.next(false);
     }
 
