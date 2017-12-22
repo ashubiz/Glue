@@ -26,10 +26,10 @@ export class AppComponent implements OnDestroy {
 
 
   constructor(public authService: AuthService, private fb: FormBuilder, private mobileService: MobileService,
-   private router: Router, private loaderService: LoaderService, private ngZone: NgZone) {
+    private router: Router, private loaderService: LoaderService, private ngZone: NgZone) {
     this.isLoggedIn = authService.isLoggedIn();
     router.events.subscribe((event: RouterEvent) => {
-      this._navigationInterceptor(event);
+      this.navigationInterceptor(event);
     });
 
   }
@@ -44,56 +44,61 @@ export class AppComponent implements OnDestroy {
   }
 
 
-  // navigationInterceptor(event: RouterEvent): void {
-  //   if (event instanceof NavigationStart) {
-  //     this.loaderService.showLoader();
-  //   }
-  //   if (event instanceof NavigationEnd) {
-  //     setTimeout(() => {
-  //       this.loaderService.hideLoader();
-  //     }, 100);
+  navigationInterceptor(event: RouterEvent): void {
+    if (event instanceof NavigationStart) {
+      this.loaderService.showLoader();
+    }
+    if (event instanceof NavigationEnd) {
+      this.loaderService.hideLoader();
+    }
 
-  //   }
+    if (event instanceof NavigationCancel) {
+      this.loaderService.hideLoader();
+    }
+    if (event instanceof NavigationError) {
+      this.loaderService.hideLoader();
+    }
+  }
 
   // Shows and hides the loading spinner during RouterEvent changes
   private _navigationInterceptor(event: RouterEvent): void {
-    
-        if (event instanceof NavigationStart) {
-          // We wanna run this function outside of Angular's zone to
-          // bypass change detection
-          this.ngZone.runOutsideAngular(() => {
-            // For simplicity we are going to turn opacity on / off
-            // you could add/remove a class for more advanced styling
-            // and enter/leave animation of the spinner
-            this.loaderService.showLoader();
-          });
-        }
-        if (event instanceof NavigationEnd) {
-          this._hideSpinner();
-        }
-    
-        // Set loading state to false in both of the below events to
-        // hide the spinner in case a request fails
-        if (event instanceof NavigationCancel) {
-          this._hideSpinner();
-        }
-        if (event instanceof NavigationError) {
-          this._hideSpinner();
-        }
-      }
-    
-      private _hideSpinner(): void {
-    
-        // We wanna run this function outside of Angular's zone to
-        // bypass change detection,
-        this.ngZone.runOutsideAngular(() => {
-    
-          // For simplicity we are going to turn opacity on / off
-          // you could add/remove a class for more advanced styling
-          // and enter/leave animation of the spinner
-          this.loaderService.hideLoader();
-        });
-      }
+
+    if (event instanceof NavigationStart) {
+      // We wanna run this function outside of Angular's zone to
+      // bypass change detection
+      this.ngZone.runOutsideAngular(() => {
+        // For simplicity we are going to turn opacity on / off
+        // you could add/remove a class for more advanced styling
+        // and enter/leave animation of the spinner
+        this.loaderService.showLoader();
+      });
+    }
+    if (event instanceof NavigationEnd) {
+      this._hideSpinner();
+    }
+
+    // Set loading state to false in both of the below events to
+    // hide the spinner in case a request fails
+    if (event instanceof NavigationCancel) {
+      this._hideSpinner();
+    }
+    if (event instanceof NavigationError) {
+      this._hideSpinner();
+    }
+  }
+
+  private _hideSpinner(): void {
+
+    // We wanna run this function outside of Angular's zone to
+    // bypass change detection,
+    this.ngZone.runOutsideAngular(() => {
+
+      // For simplicity we are going to turn opacity on / off
+      // you could add/remove a class for more advanced styling
+      // and enter/leave animation of the spinner
+      this.loaderService.hideLoader();
+    });
+  }
 
   ngOnDestroy() {
   }
