@@ -30,7 +30,7 @@ import { PaymentInfoModule } from './payment-info/payment-info.module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    CoreModule,
+    CoreModule.forRoot(),
     UserModule,
     SharedModule,
     AppRoutingModule,
