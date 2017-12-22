@@ -69,9 +69,42 @@ export class PromotionsComponent implements OnInit {
     ngOnInit() { }
 
     showPromotion(promotion?: Promotions) {
-        this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
-            console.log(res);
-        });
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 0);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 10);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 20);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 30);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 40);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 50);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 60);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 70);
+        setTimeout(() => {
+            this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe((res: any) => {
+            });
+        }, 80);
 
         this.PromotionsFormGroup = this.fb.group(this.generatePromotionsFormGroup(promotion ? promotion : new Promotions({})));
         this.dynamicService.show({

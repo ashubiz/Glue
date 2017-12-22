@@ -16,26 +16,46 @@ export class LoaderComponent implements OnInit, OnDestroy {
     subscription: Subscription;
     show: boolean;
     progress: number;
+    total: number;
 
     constructor(public loaderService: LoaderService) {
         this.isLoading = loaderService.isLoading();
         this.counter = 0;
         this.show = false;
-        this.progress = 50;
+        this.total = 0;
+        this.progress = 0;
     }
 
     ngOnInit() {
         this.subscription = this.isLoading.subscribe((state: boolean) => {
-            state ? this.counter++ : this.counter--;
+            state === true ? this.newRequest() : this.newResponse();
             if (this.counter < 0) {
                 this.counter = 0;
             }
             if (this.counter === 0) {
-                this.show = false;
+                this.total = 0;
+                setTimeout(() => {
+                    this.show = false;
+                }, 300);
             } else {
                 this.show = true;
+                this.calcProgress();
             }
         });
+    }
+
+    newResponse() {
+        this.counter--;
+        this.calcProgress();
+    }
+
+    newRequest() {
+        this.counter++;
+        this.total++;
+    }
+
+    calcProgress() {
+        this.progress = 100 - ((this.counter * 100) / this.total);
     }
 
     ngOnDestroy() {

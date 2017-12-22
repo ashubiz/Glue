@@ -21,9 +21,9 @@ export class HttpService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.requestCalls++;
+    this.showLoader();
     if (this.requestCalls === 1) {
       // Show Loading
-      this.showLoader();
     }
     // append authentications if any;
 
@@ -36,9 +36,10 @@ export class HttpService implements HttpInterceptor {
       }),
       finalize(() => {
         this.requestCalls--;
-        if (this.requestCalls === 0) {
-          this.hideLoader();
-        }
+        // if (this.requestCalls === 0) {
+
+        // }
+        this.hideLoader();
       })
     );
   }
