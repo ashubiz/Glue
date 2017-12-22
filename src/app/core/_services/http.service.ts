@@ -47,6 +47,8 @@ export class HttpService implements HttpInterceptor {
   }
 
   private hideLoader(): void {
-    this.loaderService.hideLoader();
+    setTimeout(() => {
+      this.loaderService.hideLoader();
+    }, 100);
   }
 }

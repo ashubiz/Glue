@@ -44,6 +44,17 @@ export class AppComponent implements OnDestroy {
   }
 
 
+  // navigationInterceptor(event: RouterEvent): void {
+  //   if (event instanceof NavigationStart) {
+  //     this.loaderService.showLoader();
+  //   }
+  //   if (event instanceof NavigationEnd) {
+  //     setTimeout(() => {
+  //       this.loaderService.hideLoader();
+  //     }, 100);
+
+  //   }
+
   // Shows and hides the loading spinner during RouterEvent changes
   private _navigationInterceptor(event: RouterEvent): void {
     

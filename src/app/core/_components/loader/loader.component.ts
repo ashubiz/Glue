@@ -5,21 +5,23 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
     moduleId: module.id,
     selector: 'angular-loader',
-    template: `<div *ngIf="show" class="loader-container">
-                    <div class="loader"></div>
-              </div>`,
-    // styleUrls: ['loader.component.css']
+    template: `<div *ngIf="show" class="slim-loading-bar">
+    <div class="slim-loading-bar-progress" [style.width]="progress + '%'" [style.transition]="none"></div>
+</div>`,
+    styleUrls: ['loader.component.css']
 })
 export class LoaderComponent implements OnInit, OnDestroy {
     isLoading: Observable<boolean>;
     counter: number;
     subscription: Subscription;
     show: boolean;
+    progress: number;
 
     constructor(public loaderService: LoaderService) {
         this.isLoading = loaderService.isLoading();
         this.counter = 0;
         this.show = false;
+        this.progress = 50;
     }
 
     ngOnInit() {
