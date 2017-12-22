@@ -26,7 +26,7 @@ export class AppComponent implements OnDestroy {
 
 
   constructor(public authService: AuthService, private fb: FormBuilder, private mobileService: MobileService,
-   private router: Router, private loaderService: LoaderService) {
+    private router: Router, private loaderService: LoaderService) {
     this.isLoggedIn = authService.isLoggedIn();
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
@@ -48,7 +48,10 @@ export class AppComponent implements OnDestroy {
       this.loaderService.showLoader();
     }
     if (event instanceof NavigationEnd) {
-      this.loaderService.hideLoader();
+      setTimeout(() => {
+        this.loaderService.hideLoader();
+      }, 100);
+
     }
 
     if (event instanceof NavigationCancel) {
